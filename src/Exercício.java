@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Exercício {
 
 	public static void main(String[] args) {
-		/*Crie um programa que peça que o usuário digite os valores dos 3 lados de um triângulo. O seu programa deverá validar se o triângulo existe. (A regra para isso é que a soma de quaisquer 2 lados do triângulo tem que ser SEMPRE maior que o terceiro). Além disso, caso o triângulo exista, o seu programa deverá mostrar o tipo dele. */
+		/*Crie um programa que peça que o usuário digite os valores dos 3 lados de um triângulo. O seu programa deverá validar se o triângulo existe. (A regra para isso é que a soma de quaisquer 2 lados do triângulo tem que ser SEMPRE maior que o terceiro e nenhum lado deve ser zero). Além disso, caso o triângulo exista, o seu programa deverá mostrar o tipo dele. */
 		
 		Scanner leitor = new Scanner(System.in);
 		int lado1, lado2, lado3;
@@ -14,6 +14,12 @@ public class Exercício {
 		lado2 = leitor.nextInt();
 		System.out.print("Digite o terceiro lado: ");
 		lado3 = leitor.nextInt();
+		
+		// Nenhum lado deve ser zero
+		if (lado1 == 0 || lado2 == 0 || lado3 == 0) {
+			System.out.println("Nenhum lado deve ser zero");
+			return;
+		}
 		
 		// Valida existência
 		if(lado1+lado2 > lado3 && lado2+lado3 > lado1 && lado1+lado3 > lado2)
